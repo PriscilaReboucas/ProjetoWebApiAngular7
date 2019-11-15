@@ -1,0 +1,81 @@
+<div class="container">
+
+  <mat-card>
+    <mat-toolbar color="accent">
+      <div align="center" style="color:white;text-align: right;">
+       Web Api Livraria
+      </div>
+    </mat-toolbar>
+  <br><br>
+    <mat-card-content>
+      <form [formGroup]="livroForm"(ngSubmit)="onFormSubmit(livroForm.value)">
+              <table>
+                <tr>
+                  <td class="tbl1">
+                    <mat-form-field class="demo-full-width">
+                      <input formControlName="Titulo" matTooltip="Informe o Título" matInput placeholder="Título">
+                    </mat-form-field>
+                    <mat-error>
+                      <span *ngIf="!livroForm.get('Titulo').value && clienteForm.get('Titulo').touched"></span>
+                    </mat-error>
+                  </td>
+                  <td class="tbl1">
+                    <mat-form-field class="demo-full-width">
+                      <input formControlName="Autor" matTooltip="Informe o autor" matInput placeholder="Autor">
+                    </mat-form-field>
+                    <mat-error>
+                      <span *ngIf="!livroForm.get('Autor').value && livroForm.get('Autor').touched"></span>
+                    </mat-error>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tbl1">
+                      <mat-form-field class="demo-full-width">
+                     <input formControlName="AnoEdicao" matTooltip="Informe o Ano de Edição" matInput placeholder="Ano de Edição">
+                    </mat-form-field>
+                    <br><br>
+                    <mat-error>
+                      <span *ngIf="!livroForm.get('AnoEdicao').value && livroForm.get('Telefone').touched"></span>
+                    </mat-error>
+                  </td>
+                  </tr>
+                <tr>
+                  <td></td>
+                  <td  class="content-center">
+                    <button type="submit" mat-raised-button color="accent"matTooltip="Clique em Enviar"[disabled]="!clienteForm.valid">Enviar</button>
+                    <button type="reset" mat-raised-button color="accent"matTooltip="Clique em Limpar" (click)="resetForm()">Limpar</button>
+                  </td>
+                  <td>
+                    <p *ngIf="dataSaved" style="color:rgb(0, 128, 0);font-size:20px;font-weight:bold" Class="success" align="left">
+                      {{massage}}
+                    </p>
+                  </td>
+                </tr>
+              </table>
+  <br><br>
+        <table class="table" >
+            <tr ngclass="btn-primary">
+              <th class="tbl2">Id</th>
+              <th class="tbl2">Titulo</th>
+              <th class="tbl2">Autor</th>
+              <th class="tbl2">Ano de Edição</th>
+              <th class="tbl2"></th>
+              <th class="tbl2"></th>
+            </tr>
+            <tr *ngFor="let livro of allLivros | async">
+              <td class="tbl2">{{livro.Id}}</td>
+              <td class="tbl2">{{livro.Titulo}}</td>
+              <td class="tbl2">{{livro.Autor}}</td>
+              <td class="tbl2">{{livro.AnoEdicao}}</td>
+              <td class="tbl2">
+                <button type="button" class="btn btn-info"matTooltip="Clique para Editar"(click)="loadLivroToEdit(cliente.Id)">Edita</button>
+              </td>
+              <td class="tbl2">
+                <button type="button" class="btn btn-danger"matTooltip="Clique para Deletar"(click)="deleteLivro(livro.Id)">Deleta</button>
+              </td>
+            </tr>
+          </table>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  </div>
