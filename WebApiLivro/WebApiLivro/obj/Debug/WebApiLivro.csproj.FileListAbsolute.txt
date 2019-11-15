@@ -113,3 +113,4 @@ C:\Users\Priscila\Documents\GitHub\ProjetoWebApiAngular7\WebApiLivro\WebApiLivro
 C:\Users\Priscila\Documents\GitHub\ProjetoWebApiAngular7\WebApiLivro\WebApiLivro\bin\System.Web.Cors.dll
 C:\Users\Priscila\Documents\GitHub\ProjetoWebApiAngular7\WebApiLivro\WebApiLivro\bin\System.Web.Http.Cors.dll
 C:\Users\Priscila\Documents\GitHub\ProjetoWebApiAngular7\WebApiLivro\WebApiLivro\bin\System.Web.Http.Cors.xml
+C:\Users\Priscila\Documents\GitHub\ProjetoWebApiAngular7\WebApiLivro\WebApiLivro\obj\Debug\WebApiLivro.csprojAssemblyReference.cache

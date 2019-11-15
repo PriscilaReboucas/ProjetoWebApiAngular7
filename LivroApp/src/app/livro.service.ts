@@ -30,12 +30,12 @@ export class LivroService {
   }
 
   updateLivro(livroid: string, livro: Livro): Observable<Livro> {
-    const apiurl = this.url+ '/alterar?id=' + livroid ;
-    return this.http.put<Livro>(apiurl,livro, httpOptions);
+    const apiurl = this.url + '/alterar?id=' + livroid ;
+    return this.http.put<Livro>(apiurl, livro, httpOptions);
   }
 
   deleteLivroById(livroid: string): Observable<number> {
-    return this.http.delete<number>(this.url + '/excluir?id=' + livroid,httpOptions);
+    return this.http.delete<number>(this.url + '/excluir?id=' + livroid, httpOptions);
   }
 
 }

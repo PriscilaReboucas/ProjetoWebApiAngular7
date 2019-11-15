@@ -1,5 +1,4 @@
 <div class="container">
-
   <mat-card>
     <mat-toolbar color="accent">
       <div align="center" style="color:white;text-align: right;">
@@ -16,7 +15,7 @@
                       <input formControlName="Titulo" matTooltip="Informe o Título" matInput placeholder="Título">
                     </mat-form-field>
                     <mat-error>
-                      <span *ngIf="!livroForm.get('Titulo').value && clienteForm.get('Titulo').touched"></span>
+                      <span *ngIf="!livroForm.get('Titulo').value && livroForm.get('Titulo').touched"></span>
                     </mat-error>
                   </td>
                   <td class="tbl1">
@@ -68,7 +67,7 @@
               <td class="tbl2">{{livro.Autor}}</td>
               <td class="tbl2">{{livro.AnoEdicao}}</td>
               <td class="tbl2">
-                <button type="button" class="btn btn-info"matTooltip="Clique para Editar"(click)="loadLivroToEdit(cliente.Id)">Edita</button>
+                <button type="button" class="btn btn-info"matTooltip="Clique para Editar"(click)="loadLivroToEdit(livro.Id)">Edita</button>
               </td>
               <td class="tbl2">
                 <button type="button" class="btn btn-danger"matTooltip="Clique para Deletar"(click)="deleteLivro(livro.Id)">Deleta</button>
