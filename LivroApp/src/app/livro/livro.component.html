@@ -41,7 +41,7 @@
                 <tr>
                   <td></td>
                   <td  class="content-center">
-                    <button type="submit" mat-raised-button color="accent"matTooltip="Clique em Enviar"[disabled]="!clienteForm.valid">Enviar</button>
+                    <button type="submit" mat-raised-button color="accent"matTooltip="Clique em Enviar"[disabled]="!livroForm.valid">Enviar</button>
                     <button type="reset" mat-raised-button color="accent"matTooltip="Clique em Limpar" (click)="resetForm()">Limpar</button>
                   </td>
                   <td>
@@ -52,7 +52,7 @@
                 </tr>
               </table>
   <br><br>
-        <table class="table" >
+        <table class="table mat-card-content" >
             <tr ngclass="btn-primary">
               <th class="tbl2">Id</th>
               <th class="tbl2">Titulo</th>
