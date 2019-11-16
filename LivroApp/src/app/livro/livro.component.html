@@ -26,21 +26,18 @@
                       <span *ngIf="!livroForm.get('Autor').value && livroForm.get('Autor').touched"></span>
                     </mat-error>
                   </td>
+                  <td class="tbl1">
+                    <mat-form-field class="demo-full-width">
+                   <input formControlName="AnoEdicao" matTooltip="Informe o Ano de Edição" matInput placeholder="Ano de Edição">
+                  </mat-form-field>
+                  <mat-error>
+                    <span *ngIf="!livroForm.get('AnoEdicao').value && livroForm.get('AnoEdicao').touched"></span>
+                  </mat-error>
+                </td>
                 </tr>
                 <tr>
-                  <td class="tbl1">
-                      <mat-form-field class="demo-full-width">
-                     <input formControlName="AnoEdicao" matTooltip="Informe o Ano de Edição" matInput placeholder="Ano de Edição">
-                    </mat-form-field>
-                    <br><br>
-                    <mat-error>
-                      <span *ngIf="!livroForm.get('AnoEdicao').value && livroForm.get('Telefone').touched"></span>
-                    </mat-error>
-                  </td>
-                  </tr>
-                <tr>
                   <td></td>
-                  <td  class="content-center">
+                  <td class="content-center">
                     <button type="submit" mat-raised-button color="accent"matTooltip="Clique em Enviar"[disabled]="!livroForm.valid">Enviar</button>
                     <button type="reset" mat-raised-button color="accent"matTooltip="Clique em Limpar" (click)="resetForm()">Limpar</button>
                   </td>
@@ -51,11 +48,12 @@
                   </td>
                 </tr>
               </table>
+            </form>
   <br><br>
-        <table class="table mat-card-content" >
+        <table class="table" >
             <tr ngclass="btn-primary">
-              <th class="tbl2">Id</th>
-              <th class="tbl2">Titulo</th>
+              <th class="tbl2">Código</th>
+              <th class="tbl2">Título</th>
               <th class="tbl2">Autor</th>
               <th class="tbl2">Ano de Edição</th>
               <th class="tbl2"></th>
@@ -67,14 +65,13 @@
               <td class="tbl2">{{livro.Autor}}</td>
               <td class="tbl2">{{livro.AnoEdicao}}</td>
               <td class="tbl2">
-                <button type="button" class="btn btn-info"matTooltip="Clique para Editar"(click)="loadLivroToEdit(livro.Id)">Edita</button>
+                <button type="button" class="btn btn-info"matTooltip="Clique para Editar"(click)="loadLivroToEdit(livro.Id)">Editar</button>
               </td>
               <td class="tbl2">
-                <button type="button" class="btn btn-danger"matTooltip="Clique para Deletar"(click)="deleteLivro(livro.Id)">Deleta</button>
+                <button type="button" class="btn btn-danger"matTooltip="Clique para Deletar"(click)="deleteLivro(livro.Id)">Excluir</button>
               </td>
             </tr>
           </table>
-      </form>
     </mat-card-content>
   </mat-card>
   </div>

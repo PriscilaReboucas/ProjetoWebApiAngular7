@@ -41,7 +41,7 @@ import {
     MatToolbarModule,
     AppRoutingModule
   ],
-  providers: [HttpClientModule, LivroService, MatDatepickerModule],
+  providers: [HttpClientModule, LivroService,MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
