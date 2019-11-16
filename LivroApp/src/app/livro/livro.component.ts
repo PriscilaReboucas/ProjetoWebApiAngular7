@@ -78,7 +78,7 @@ export class LivroComponent implements OnInit {
       if (confirm("Deseja realmente excluir este livro ?")) {
       this.livroService.deleteLivroById(livroId).subscribe(() => {
         this.dataSaved = true;
-        this.massage = 'Operação realizada com sucesso';
+        this.massage = 'Operação realizada com sucesso!';
         this.loadAllLivros();
         this.livroIdUpdate = null;
         this.livroForm.reset();
