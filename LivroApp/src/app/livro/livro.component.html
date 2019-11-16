@@ -1,12 +1,16 @@
 <div class="container">
   <mat-card>
     <mat-toolbar color="accent">
-      <div align="center" style="color:white;text-align: right;">
+      <div align="center" style="color:white;">
        Web Api Livraria
       </div>
     </mat-toolbar>
   <br><br>
     <mat-card-content>
+        <h2 align="center" style=color:pink;>
+            Informe os dados do livro
+           </h2>
+           <br><br>
       <form [formGroup]="livroForm"(ngSubmit)="onFormSubmit(livroForm.value)">
               <table>
                 <tr>
@@ -38,8 +42,8 @@
                 <tr>
                   <td></td>
                   <td class="content-center">
-                    <button type="submit" mat-raised-button color="accent"matTooltip="Clique em Enviar"[disabled]="!livroForm.valid">Enviar</button>
                     <button type="reset" mat-raised-button color="accent"matTooltip="Clique em Limpar" (click)="resetForm()">Limpar</button>
+                    <button type="submit" mat-raised-button color="accent"matTooltip="Clique em Enviar"[disabled]="!livroForm.valid">Enviar</button>
                   </td>
                   <td>
                     <p *ngIf="dataSaved" style="color:rgb(0, 128, 0);font-size:20px;font-weight:bold" Class="success" align="left">
@@ -50,7 +54,7 @@
               </table>
             </form>
   <br><br>
-        <table class="table" >
+        <table class="table"align="center" >
             <tr ngclass="btn-primary">
               <th class="tbl2">Código</th>
               <th class="tbl2">Título</th>
