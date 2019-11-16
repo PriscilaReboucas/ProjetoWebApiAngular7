@@ -16,7 +16,7 @@ export class LivroComponent implements OnInit {
   allLivros: Observable<Livro[]>;
   livroIdUpdate = null;
   massage = null;
-  constructor(private formbulider: FormBuilder, private livroService:LivroService) { }
+  constructor(private formbulider: FormBuilder, private livroService: LivroService) { }
 
   ngOnInit() {
     this.livroForm = this.formbulider.group({
@@ -35,7 +35,9 @@ export class LivroComponent implements OnInit {
       this.dataSaved = false;
       const livro = this.livroForm.value;
       this.CreateLivro(livro);
+      this.loadAllLivros();
       this.livroForm.reset();
+
    }
 
    loadLivroToEdit(livroId: string) {
@@ -54,7 +56,7 @@ export class LivroComponent implements OnInit {
         this.livroService.createLivro(livro).subscribe(
           () => {
             this.dataSaved = true;
-            this.massage = 'Registro salvo com sucesso';
+            this.massage = 'Registro salvo com sucesso!';
             this.loadAllLivros();
             this.livroIdUpdate = null;
             this.livroForm.reset();
@@ -64,7 +66,7 @@ export class LivroComponent implements OnInit {
         livro.Id = this.livroIdUpdate;
         this.livroService.updateLivro(this.livroIdUpdate, livro).subscribe(() => {
           this.dataSaved = true;
-          this.massage = 'Registro Atualizado com sucesso';
+          this.massage = 'Registro Atualizado com sucesso!';
           this.loadAllLivros();
           this.livroIdUpdate = null;
           this.livroForm.reset();

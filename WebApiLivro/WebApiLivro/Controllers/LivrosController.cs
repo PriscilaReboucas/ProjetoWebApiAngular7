@@ -23,7 +23,7 @@ namespace WebApiLivro.Controllers
         [Route("todos")]
         public IQueryable<Livro> GetLivros()
         {
-            return db.Livros.OrderBy(x=>x.Titulo);
+            return db.Livros?.OrderBy(x=>x.Titulo);
         }
 
         // GET: api/Livros/5
